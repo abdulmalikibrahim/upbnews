@@ -1,0 +1,609 @@
+DEBUG - 2025-07-07 00:53:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-07 00:59:25 --> ParseError: syntax error, unexpected token "foreach"
+[Method: GET, Route: /]
+in APPPATH\Views\templates\navbar.php on line 23.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('templates/navbar', null, true)
+ 3 APPPATH\Views\templates\index.php(15): CodeIgniter\View\View->include('templates/navbar')
+ 4 SYSTEMPATH\View\View.php(224): include('D:\\laragon\\www\\upbnews\\app\\Views\\templates\\index.php')
+ 5 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('templates/index', [], true)
+ 7 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('main/index', [], true)
+ 8 APPPATH\Controllers\Main.php(24): view('main/index', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Main->index()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-07-07 00:59:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 01:51:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 01:51:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-07-07 01:58:00 --> mysqli_sql_exception: Unknown column 'cretaed_at' in 'field list' in D:\laragon\www\upbnews\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 D:\laragon\www\upbnews\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `title`,...', 0)
+#1 D:\laragon\www\upbnews\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `title`,...')
+#2 D:\laragon\www\upbnews\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `title`,...')
+#3 D:\laragon\www\upbnews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `title`,...', Array, false)
+#4 D:\laragon\www\upbnews\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\upbnews\system\BaseModel.php(613): CodeIgniter\Model->doFind(true, '1')
+#6 D:\laragon\www\upbnews\app\Controllers\Article.php(132): CodeIgniter\BaseModel->find('1')
+#7 D:\laragon\www\upbnews\system\CodeIgniter.php(933): App\Controllers\Article->category('1')
+#8 D:\laragon\www\upbnews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Article))
+#9 D:\laragon\www\upbnews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\laragon\www\upbnews\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 D:\laragon\www\upbnews\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 D:\laragon\www\upbnews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-07-07 01:58:00 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cretaed_at' in 'field list'
+[Method: GET, Route: article/category/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `title`, `cretaed_at`, `writer`, `content`
+FROM `articles`
+WHERE `articles`.`id` = :articles.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(613): CodeIgniter\Model->doFind(true, '1')
+ 4 APPPATH\Controllers\Article.php(132): CodeIgniter\BaseModel->find('1')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Article->category('1')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Article))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-07 01:58:00 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'cretaed_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `title`, `cretaed_at`, `writer`, `content`
+FROM `articles`
+WHERE `articles`.`id` = \'1\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `title`, `cretaed_at`, `writer`, `content`
+FROM `articles`
+WHERE `articles`.`id` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `title`, `cretaed_at`, `writer`, `content`
+FROM `articles`
+WHERE `articles`.`id` = :articles.id:', [...], false)
+ 4 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(613): CodeIgniter\Model->doFind(true, '1')
+ 6 APPPATH\Controllers\Article.php(132): CodeIgniter\BaseModel->find('1')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Article->category('1')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Article))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-07 01:58:00 --> [Caused by] mysqli_sql_exception: Unknown column 'cretaed_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `title`, `cretaed_at`, `writer`, `content`
+FROM `articles`
+WHERE `articles`.`id` = \'1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `title`, `cretaed_at`, `writer`, `content`
+FROM `articles`
+WHERE `articles`.`id` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `title`, `cretaed_at`, `writer`, `content`
+FROM `articles`
+WHERE `articles`.`id` = \'1\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `title`, `cretaed_at`, `writer`, `content`
+FROM `articles`
+WHERE `articles`.`id` = :articles.id:', [...], false)
+ 5 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(613): CodeIgniter\Model->doFind(true, '1')
+ 7 APPPATH\Controllers\Article.php(132): CodeIgniter\BaseModel->find('1')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Article->category('1')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Article))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-07-07 02:09:23 --> mysqli_sql_exception: Column 'id' in order clause is ambiguous in D:\laragon\www\upbnews\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 D:\laragon\www\upbnews\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `article...', 0)
+#1 D:\laragon\www\upbnews\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `article...')
+#2 D:\laragon\www\upbnews\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `article...')
+#3 D:\laragon\www\upbnews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `article...', Array, false)
+#4 D:\laragon\www\upbnews\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\upbnews\system\BaseModel.php(613): CodeIgniter\Model->doFind(true, '1')
+#6 D:\laragon\www\upbnews\app\Models\ArticleModel.php(64): CodeIgniter\BaseModel->find('1')
+#7 D:\laragon\www\upbnews\app\Controllers\Article.php(131): App\Models\ArticleModel->getArticleByCategory('1')
+#8 D:\laragon\www\upbnews\system\CodeIgniter.php(933): App\Controllers\Article->category('1')
+#9 D:\laragon\www\upbnews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Article))
+#10 D:\laragon\www\upbnews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\laragon\www\upbnews\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 D:\laragon\www\upbnews\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 D:\laragon\www\upbnews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-07-07 02:09:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'id' in order clause is ambiguous
+[Method: GET, Route: article/category/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `articles`.`title`, `articles`.`created_at`, `articles`.`writer`, `articles`.`content`, COUNT(DISTINCT views.id) AS total_views, COUNT(DISTINCT comments.id) AS total_comments, COUNT(DISTINCT likes.id) AS total_likes
+FROM `articles`
+LEFT JOIN `views` ON `views`.`id_article` = `articles`.`id`
+LEFT JOIN `comments` ON `comments`.`id_article` = `articles`.`id`
+LEFT JOIN `likes` ON `likes`.`id_article` = `articles`.`id`
+WHERE `articles`.`content` != ""
+AND `articles`.`id` = :articles.id:
+GROUP BY `articles`.`id`
+ORDER BY `id` DESC', [...], false)
+ 2 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(613): CodeIgniter\Model->doFind(true, '1')
+ 4 APPPATH\Models\ArticleModel.php(64): CodeIgniter\BaseModel->find('1')
+ 5 APPPATH\Controllers\Article.php(131): App\Models\ArticleModel->getArticleByCategory('1')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Article->category('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Article))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-07 02:09:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'id' in order clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `articles`.`title`, `articles`.`created_at`, `articles`.`writer`, `articles`.`content`, COUNT(DISTINCT views.id) AS total_views, COUNT(DISTINCT comments.id) AS total_comments, COUNT(DISTINCT likes.id) AS total_likes
+FROM `articles`
+LEFT JOIN `views` ON `views`.`id_article` = `articles`.`id`
+LEFT JOIN `comments` ON `comments`.`id_article` = `articles`.`id`
+LEFT JOIN `likes` ON `likes`.`id_article` = `articles`.`id`
+WHERE `articles`.`content` != ""
+AND `articles`.`id` = \'1\'
+GROUP BY `articles`.`id`
+ORDER BY `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `articles`.`title`, `articles`.`created_at`, `articles`.`writer`, `articles`.`content`, COUNT(DISTINCT views.id) AS total_views, COUNT(DISTINCT comments.id) AS total_comments, COUNT(DISTINCT likes.id) AS total_likes
+FROM `articles`
+LEFT JOIN `views` ON `views`.`id_article` = `articles`.`id`
+LEFT JOIN `comments` ON `comments`.`id_article` = `articles`.`id`
+LEFT JOIN `likes` ON `likes`.`id_article` = `articles`.`id`
+WHERE `articles`.`content` != ""
+AND `articles`.`id` = \'1\'
+GROUP BY `articles`.`id`
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `articles`.`title`, `articles`.`created_at`, `articles`.`writer`, `articles`.`content`, COUNT(DISTINCT views.id) AS total_views, COUNT(DISTINCT comments.id) AS total_comments, COUNT(DISTINCT likes.id) AS total_likes
+FROM `articles`
+LEFT JOIN `views` ON `views`.`id_article` = `articles`.`id`
+LEFT JOIN `comments` ON `comments`.`id_article` = `articles`.`id`
+LEFT JOIN `likes` ON `likes`.`id_article` = `articles`.`id`
+WHERE `articles`.`content` != ""
+AND `articles`.`id` = :articles.id:
+GROUP BY `articles`.`id`
+ORDER BY `id` DESC', [...], false)
+ 4 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(613): CodeIgniter\Model->doFind(true, '1')
+ 6 APPPATH\Models\ArticleModel.php(64): CodeIgniter\BaseModel->find('1')
+ 7 APPPATH\Controllers\Article.php(131): App\Models\ArticleModel->getArticleByCategory('1')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Article->category('1')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Article))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-07 02:09:23 --> [Caused by] mysqli_sql_exception: Column 'id' in order clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `articles`.`title`, `articles`.`created_at`, `articles`.`writer`, `articles`.`content`, COUNT(DISTINCT views.id) AS total_views, COUNT(DISTINCT comments.id) AS total_comments, COUNT(DISTINCT likes.id) AS total_likes
+FROM `articles`
+LEFT JOIN `views` ON `views`.`id_article` = `articles`.`id`
+LEFT JOIN `comments` ON `comments`.`id_article` = `articles`.`id`
+LEFT JOIN `likes` ON `likes`.`id_article` = `articles`.`id`
+WHERE `articles`.`content` != ""
+AND `articles`.`id` = \'1\'
+GROUP BY `articles`.`id`
+ORDER BY `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `articles`.`title`, `articles`.`created_at`, `articles`.`writer`, `articles`.`content`, COUNT(DISTINCT views.id) AS total_views, COUNT(DISTINCT comments.id) AS total_comments, COUNT(DISTINCT likes.id) AS total_likes
+FROM `articles`
+LEFT JOIN `views` ON `views`.`id_article` = `articles`.`id`
+LEFT JOIN `comments` ON `comments`.`id_article` = `articles`.`id`
+LEFT JOIN `likes` ON `likes`.`id_article` = `articles`.`id`
+WHERE `articles`.`content` != ""
+AND `articles`.`id` = \'1\'
+GROUP BY `articles`.`id`
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `articles`.`title`, `articles`.`created_at`, `articles`.`writer`, `articles`.`content`, COUNT(DISTINCT views.id) AS total_views, COUNT(DISTINCT comments.id) AS total_comments, COUNT(DISTINCT likes.id) AS total_likes
+FROM `articles`
+LEFT JOIN `views` ON `views`.`id_article` = `articles`.`id`
+LEFT JOIN `comments` ON `comments`.`id_article` = `articles`.`id`
+LEFT JOIN `likes` ON `likes`.`id_article` = `articles`.`id`
+WHERE `articles`.`content` != ""
+AND `articles`.`id` = \'1\'
+GROUP BY `articles`.`id`
+ORDER BY `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `articles`.`title`, `articles`.`created_at`, `articles`.`writer`, `articles`.`content`, COUNT(DISTINCT views.id) AS total_views, COUNT(DISTINCT comments.id) AS total_comments, COUNT(DISTINCT likes.id) AS total_likes
+FROM `articles`
+LEFT JOIN `views` ON `views`.`id_article` = `articles`.`id`
+LEFT JOIN `comments` ON `comments`.`id_article` = `articles`.`id`
+LEFT JOIN `likes` ON `likes`.`id_article` = `articles`.`id`
+WHERE `articles`.`content` != ""
+AND `articles`.`id` = :articles.id:
+GROUP BY `articles`.`id`
+ORDER BY `id` DESC', [...], false)
+ 5 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(613): CodeIgniter\Model->doFind(true, '1')
+ 7 APPPATH\Models\ArticleModel.php(64): CodeIgniter\BaseModel->find('1')
+ 8 APPPATH\Controllers\Article.php(131): App\Models\ArticleModel->getArticleByCategory('1')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Article->category('1')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Article))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-07-07 02:09:59 --> mysqli_sql_exception: Column 'id' in order clause is ambiguous in D:\laragon\www\upbnews\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 D:\laragon\www\upbnews\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `article...', 0)
+#1 D:\laragon\www\upbnews\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `article...')
+#2 D:\laragon\www\upbnews\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `article...')
+#3 D:\laragon\www\upbnews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `article...', Array, false)
+#4 D:\laragon\www\upbnews\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\upbnews\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\upbnews\app\Models\ArticleModel.php(64): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\upbnews\app\Controllers\Article.php(131): App\Models\ArticleModel->getArticleByCategory('1')
+#8 D:\laragon\www\upbnews\system\CodeIgniter.php(933): App\Controllers\Article->category('1')
+#9 D:\laragon\www\upbnews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Article))
+#10 D:\laragon\www\upbnews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\laragon\www\upbnews\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 D:\laragon\www\upbnews\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 D:\laragon\www\upbnews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-07-07 02:09:59 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'id' in order clause is ambiguous
+[Method: GET, Route: article/category/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `articles`.`title`, `articles`.`created_at`, `articles`.`writer`, `articles`.`content`, COUNT(DISTINCT views.id) AS total_views, COUNT(DISTINCT comments.id) AS total_comments, COUNT(DISTINCT likes.id) AS total_likes
+FROM `articles`
+LEFT JOIN `views` ON `views`.`id_article` = `articles`.`id`
+LEFT JOIN `comments` ON `comments`.`id_article` = `articles`.`id`
+LEFT JOIN `likes` ON `likes`.`id_article` = `articles`.`id`
+WHERE `articles`.`id_category` = "1"
+GROUP BY `articles`.`id`
+ORDER BY `id` DESC', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ArticleModel.php(64): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Article.php(131): App\Models\ArticleModel->getArticleByCategory('1')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Article->category('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Article))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-07 02:09:59 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'id' in order clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `articles`.`title`, `articles`.`created_at`, `articles`.`writer`, `articles`.`content`, COUNT(DISTINCT views.id) AS total_views, COUNT(DISTINCT comments.id) AS total_comments, COUNT(DISTINCT likes.id) AS total_likes
+FROM `articles`
+LEFT JOIN `views` ON `views`.`id_article` = `articles`.`id`
+LEFT JOIN `comments` ON `comments`.`id_article` = `articles`.`id`
+LEFT JOIN `likes` ON `likes`.`id_article` = `articles`.`id`
+WHERE `articles`.`id_category` = "1"
+GROUP BY `articles`.`id`
+ORDER BY `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `articles`.`title`, `articles`.`created_at`, `articles`.`writer`, `articles`.`content`, COUNT(DISTINCT views.id) AS total_views, COUNT(DISTINCT comments.id) AS total_comments, COUNT(DISTINCT likes.id) AS total_likes
+FROM `articles`
+LEFT JOIN `views` ON `views`.`id_article` = `articles`.`id`
+LEFT JOIN `comments` ON `comments`.`id_article` = `articles`.`id`
+LEFT JOIN `likes` ON `likes`.`id_article` = `articles`.`id`
+WHERE `articles`.`id_category` = "1"
+GROUP BY `articles`.`id`
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `articles`.`title`, `articles`.`created_at`, `articles`.`writer`, `articles`.`content`, COUNT(DISTINCT views.id) AS total_views, COUNT(DISTINCT comments.id) AS total_comments, COUNT(DISTINCT likes.id) AS total_likes
+FROM `articles`
+LEFT JOIN `views` ON `views`.`id_article` = `articles`.`id`
+LEFT JOIN `comments` ON `comments`.`id_article` = `articles`.`id`
+LEFT JOIN `likes` ON `likes`.`id_article` = `articles`.`id`
+WHERE `articles`.`id_category` = "1"
+GROUP BY `articles`.`id`
+ORDER BY `id` DESC', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ArticleModel.php(64): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Article.php(131): App\Models\ArticleModel->getArticleByCategory('1')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Article->category('1')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Article))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-07 02:09:59 --> [Caused by] mysqli_sql_exception: Column 'id' in order clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `articles`.`title`, `articles`.`created_at`, `articles`.`writer`, `articles`.`content`, COUNT(DISTINCT views.id) AS total_views, COUNT(DISTINCT comments.id) AS total_comments, COUNT(DISTINCT likes.id) AS total_likes
+FROM `articles`
+LEFT JOIN `views` ON `views`.`id_article` = `articles`.`id`
+LEFT JOIN `comments` ON `comments`.`id_article` = `articles`.`id`
+LEFT JOIN `likes` ON `likes`.`id_article` = `articles`.`id`
+WHERE `articles`.`id_category` = "1"
+GROUP BY `articles`.`id`
+ORDER BY `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `articles`.`title`, `articles`.`created_at`, `articles`.`writer`, `articles`.`content`, COUNT(DISTINCT views.id) AS total_views, COUNT(DISTINCT comments.id) AS total_comments, COUNT(DISTINCT likes.id) AS total_likes
+FROM `articles`
+LEFT JOIN `views` ON `views`.`id_article` = `articles`.`id`
+LEFT JOIN `comments` ON `comments`.`id_article` = `articles`.`id`
+LEFT JOIN `likes` ON `likes`.`id_article` = `articles`.`id`
+WHERE `articles`.`id_category` = "1"
+GROUP BY `articles`.`id`
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `articles`.`title`, `articles`.`created_at`, `articles`.`writer`, `articles`.`content`, COUNT(DISTINCT views.id) AS total_views, COUNT(DISTINCT comments.id) AS total_comments, COUNT(DISTINCT likes.id) AS total_likes
+FROM `articles`
+LEFT JOIN `views` ON `views`.`id_article` = `articles`.`id`
+LEFT JOIN `comments` ON `comments`.`id_article` = `articles`.`id`
+LEFT JOIN `likes` ON `likes`.`id_article` = `articles`.`id`
+WHERE `articles`.`id_category` = "1"
+GROUP BY `articles`.`id`
+ORDER BY `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `articles`.`title`, `articles`.`created_at`, `articles`.`writer`, `articles`.`content`, COUNT(DISTINCT views.id) AS total_views, COUNT(DISTINCT comments.id) AS total_comments, COUNT(DISTINCT likes.id) AS total_likes
+FROM `articles`
+LEFT JOIN `views` ON `views`.`id_article` = `articles`.`id`
+LEFT JOIN `comments` ON `comments`.`id_article` = `articles`.`id`
+LEFT JOIN `likes` ON `likes`.`id_article` = `articles`.`id`
+WHERE `articles`.`id_category` = "1"
+GROUP BY `articles`.`id`
+ORDER BY `id` DESC', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ArticleModel.php(64): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Article.php(131): App\Models\ArticleModel->getArticleByCategory('1')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Article->category('1')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Article))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-07-07 02:10:01 --> mysqli_sql_exception: Column 'id' in order clause is ambiguous in D:\laragon\www\upbnews\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 D:\laragon\www\upbnews\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `article...', 0)
+#1 D:\laragon\www\upbnews\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `article...')
+#2 D:\laragon\www\upbnews\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `article...')
+#3 D:\laragon\www\upbnews\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `article...', Array, false)
+#4 D:\laragon\www\upbnews\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\laragon\www\upbnews\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\laragon\www\upbnews\app\Models\ArticleModel.php(64): CodeIgniter\BaseModel->findAll()
+#7 D:\laragon\www\upbnews\app\Controllers\Article.php(131): App\Models\ArticleModel->getArticleByCategory('1')
+#8 D:\laragon\www\upbnews\system\CodeIgniter.php(933): App\Controllers\Article->category('1')
+#9 D:\laragon\www\upbnews\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Article))
+#10 D:\laragon\www\upbnews\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\laragon\www\upbnews\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 D:\laragon\www\upbnews\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 D:\laragon\www\upbnews\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-07-07 02:10:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'id' in order clause is ambiguous
+[Method: GET, Route: article/category/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `articles`.`title`, `articles`.`created_at`, `articles`.`writer`, `articles`.`content`, COUNT(DISTINCT views.id) AS total_views, COUNT(DISTINCT comments.id) AS total_comments, COUNT(DISTINCT likes.id) AS total_likes
+FROM `articles`
+LEFT JOIN `views` ON `views`.`id_article` = `articles`.`id`
+LEFT JOIN `comments` ON `comments`.`id_article` = `articles`.`id`
+LEFT JOIN `likes` ON `likes`.`id_article` = `articles`.`id`
+WHERE `articles`.`id_category` = "1"
+GROUP BY `articles`.`id`
+ORDER BY `id` DESC', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\ArticleModel.php(64): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Article.php(131): App\Models\ArticleModel->getArticleByCategory('1')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Article->category('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Article))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-07 02:10:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'id' in order clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `articles`.`title`, `articles`.`created_at`, `articles`.`writer`, `articles`.`content`, COUNT(DISTINCT views.id) AS total_views, COUNT(DISTINCT comments.id) AS total_comments, COUNT(DISTINCT likes.id) AS total_likes
+FROM `articles`
+LEFT JOIN `views` ON `views`.`id_article` = `articles`.`id`
+LEFT JOIN `comments` ON `comments`.`id_article` = `articles`.`id`
+LEFT JOIN `likes` ON `likes`.`id_article` = `articles`.`id`
+WHERE `articles`.`id_category` = "1"
+GROUP BY `articles`.`id`
+ORDER BY `id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `articles`.`title`, `articles`.`created_at`, `articles`.`writer`, `articles`.`content`, COUNT(DISTINCT views.id) AS total_views, COUNT(DISTINCT comments.id) AS total_comments, COUNT(DISTINCT likes.id) AS total_likes
+FROM `articles`
+LEFT JOIN `views` ON `views`.`id_article` = `articles`.`id`
+LEFT JOIN `comments` ON `comments`.`id_article` = `articles`.`id`
+LEFT JOIN `likes` ON `likes`.`id_article` = `articles`.`id`
+WHERE `articles`.`id_category` = "1"
+GROUP BY `articles`.`id`
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `articles`.`title`, `articles`.`created_at`, `articles`.`writer`, `articles`.`content`, COUNT(DISTINCT views.id) AS total_views, COUNT(DISTINCT comments.id) AS total_comments, COUNT(DISTINCT likes.id) AS total_likes
+FROM `articles`
+LEFT JOIN `views` ON `views`.`id_article` = `articles`.`id`
+LEFT JOIN `comments` ON `comments`.`id_article` = `articles`.`id`
+LEFT JOIN `likes` ON `likes`.`id_article` = `articles`.`id`
+WHERE `articles`.`id_category` = "1"
+GROUP BY `articles`.`id`
+ORDER BY `id` DESC', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\ArticleModel.php(64): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Article.php(131): App\Models\ArticleModel->getArticleByCategory('1')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Article->category('1')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Article))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-07 02:10:01 --> [Caused by] mysqli_sql_exception: Column 'id' in order clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `articles`.`title`, `articles`.`created_at`, `articles`.`writer`, `articles`.`content`, COUNT(DISTINCT views.id) AS total_views, COUNT(DISTINCT comments.id) AS total_comments, COUNT(DISTINCT likes.id) AS total_likes
+FROM `articles`
+LEFT JOIN `views` ON `views`.`id_article` = `articles`.`id`
+LEFT JOIN `comments` ON `comments`.`id_article` = `articles`.`id`
+LEFT JOIN `likes` ON `likes`.`id_article` = `articles`.`id`
+WHERE `articles`.`id_category` = "1"
+GROUP BY `articles`.`id`
+ORDER BY `id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `articles`.`title`, `articles`.`created_at`, `articles`.`writer`, `articles`.`content`, COUNT(DISTINCT views.id) AS total_views, COUNT(DISTINCT comments.id) AS total_comments, COUNT(DISTINCT likes.id) AS total_likes
+FROM `articles`
+LEFT JOIN `views` ON `views`.`id_article` = `articles`.`id`
+LEFT JOIN `comments` ON `comments`.`id_article` = `articles`.`id`
+LEFT JOIN `likes` ON `likes`.`id_article` = `articles`.`id`
+WHERE `articles`.`id_category` = "1"
+GROUP BY `articles`.`id`
+ORDER BY `id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `articles`.`title`, `articles`.`created_at`, `articles`.`writer`, `articles`.`content`, COUNT(DISTINCT views.id) AS total_views, COUNT(DISTINCT comments.id) AS total_comments, COUNT(DISTINCT likes.id) AS total_likes
+FROM `articles`
+LEFT JOIN `views` ON `views`.`id_article` = `articles`.`id`
+LEFT JOIN `comments` ON `comments`.`id_article` = `articles`.`id`
+LEFT JOIN `likes` ON `likes`.`id_article` = `articles`.`id`
+WHERE `articles`.`id_category` = "1"
+GROUP BY `articles`.`id`
+ORDER BY `id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `articles`.`title`, `articles`.`created_at`, `articles`.`writer`, `articles`.`content`, COUNT(DISTINCT views.id) AS total_views, COUNT(DISTINCT comments.id) AS total_comments, COUNT(DISTINCT likes.id) AS total_likes
+FROM `articles`
+LEFT JOIN `views` ON `views`.`id_article` = `articles`.`id`
+LEFT JOIN `comments` ON `comments`.`id_article` = `articles`.`id`
+LEFT JOIN `likes` ON `likes`.`id_article` = `articles`.`id`
+WHERE `articles`.`id_category` = "1"
+GROUP BY `articles`.`id`
+ORDER BY `id` DESC', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\ArticleModel.php(64): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Article.php(131): App\Models\ArticleModel->getArticleByCategory('1')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Article->category('1')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Article))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-07 02:10:23 --> ErrorException: Undefined variable $detail
+[Method: GET, Route: article/category/1]
+in APPPATH\Views\article\view.php on line 10.
+ 1 APPPATH\Views\article\view.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $detail', 'D:\\laragon\\www\\upbnews\\app\\Views\\article\\view.php', 10)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\laragon\\www\\upbnews\\app\\Views\\article\\view.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('article/view', [], true)
+ 5 APPPATH\Controllers\Article.php(134): view('article/view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Article->category('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Article))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-07 02:13:05 --> ErrorException: Undefined array key "thumbnail"
+[Method: GET, Route: article/category/1]
+in APPPATH\Views\article\view_category.php on line 17.
+ 1 APPPATH\Views\article\view_category.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "thumbnail"', 'D:\\laragon\\www\\upbnews\\app\\Views\\article\\view_category.php', 17)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\laragon\\www\\upbnews\\app\\Views\\article\\view_category.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('article/view_category', [], true)
+ 5 APPPATH\Controllers\Article.php(134): view('article/view_category', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Article->category('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Article))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-07 02:13:27 --> ErrorException: Undefined array key "category"
+[Method: GET, Route: article/category/1]
+in APPPATH\Views\article\view_category.php on line 23.
+ 1 APPPATH\Views\article\view_category.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "category"', 'D:\\laragon\\www\\upbnews\\app\\Views\\article\\view_category.php', 23)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\laragon\\www\\upbnews\\app\\Views\\article\\view_category.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('article/view_category', [], true)
+ 5 APPPATH\Controllers\Article.php(134): view('article/view_category', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Article->category('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Article))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-07 02:13:51 --> ErrorException: Undefined array key "id"
+[Method: GET, Route: article/category/1]
+in APPPATH\Views\article\view_category.php on line 24.
+ 1 APPPATH\Views\article\view_category.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'D:\\laragon\\www\\upbnews\\app\\Views\\article\\view_category.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\laragon\\www\\upbnews\\app\\Views\\article\\view_category.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('article/view_category', [], true)
+ 5 APPPATH\Controllers\Article.php(134): view('article/view_category', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Article->category('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Article))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-07 02:14:19 --> ErrorException: Undefined array key "id"
+[Method: GET, Route: article/category/1]
+in APPPATH\Views\article\view_category.php on line 24.
+ 1 APPPATH\Views\article\view_category.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'D:\\laragon\\www\\upbnews\\app\\Views\\article\\view_category.php', 24)
+ 2 SYSTEMPATH\View\View.php(224): include('D:\\laragon\\www\\upbnews\\app\\Views\\article\\view_category.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('article/view_category', [], true)
+ 5 APPPATH\Controllers\Article.php(134): view('article/view_category', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Article->category('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Article))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-07-07 02:14:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:15:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:15:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:16:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:17:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:17:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:17:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:18:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:18:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:18:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:18:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:19:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:19:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:19:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:19:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:20:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:20:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:20:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:21:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:22:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:22:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:23:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:23:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:23:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:23:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:23:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:24:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:25:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:25:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:25:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:25:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:25:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:26:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:26:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:26:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:27:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:27:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:27:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:28:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:29:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:29:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:29:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:30:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:30:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:31:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:31:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:31:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:31:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-07 02:35:26 --> ErrorException: Undefined variable $categoryModel
+[Method: GET, Route: article/view/15]
+in APPPATH\Controllers\Article.php on line 97.
+ 1 APPPATH\Controllers\Article.php(97): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $categoryModel', 'D:\\laragon\\www\\upbnews\\app\\Controllers\\Article.php', 97)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Article->view('15')
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Article))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-07-07 02:35:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:35:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:36:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:36:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:36:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:36:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:36:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:38:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:38:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:38:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:38:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:38:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:39:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:39:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:39:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:40:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:40:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:41:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:41:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:42:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:42:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:43:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:51:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-07 02:51:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
