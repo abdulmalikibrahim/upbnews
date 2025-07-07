@@ -2,9 +2,12 @@
 
 <?= $this->section('content'); ?>
     <!-- Single Product Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
+    <div class="container-fluid py-2">
+        <div class="container py-3">
             <div class="row g-4">
+                <div class="col-12">
+                    <h1 style="font-size: 3.5rem;"><?= strtoupper($category_name["category"]) ?></h1>
+                </div>
                 <div class="col-lg-8" style="white-space: normal; overflow-wrap: break-word; word-break: break-word;">
                     <?php
                     if(!empty($listArticle)){

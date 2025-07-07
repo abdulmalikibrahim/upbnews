@@ -1,10 +1,14 @@
 <?php
 namespace App\Controllers;
 
+use App\Models\CategoryModel;
+
 class Contact extends BaseController
 {
     public function index()
     {
-        return view('main/contact_us');
+        $categoryModel = new CategoryModel();
+        $data["category"] = $categoryModel->findAll();
+        return view('main/contact_us',$data);
     }
 }

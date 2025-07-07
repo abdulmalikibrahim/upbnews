@@ -85,7 +85,7 @@
 
 
     <!-- Main Post Section Start -->
-    <div class="container-fluid py-2">
+    <div class="container-fluid py-lg-2 py-5">
         <div class="container py-0">
             <div class="row g-4">
                 <div class="col-lg-7 col-xl-8 mt-0">
